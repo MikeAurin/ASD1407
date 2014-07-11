@@ -1,0 +1,68 @@
+var mainWin = Ti.UI.createWindow({
+	title: "Android L Update Checker",
+	backgroundColor: "#fff"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: mainWin,
+});
+
+var table = Ti.UI.createTableView({
+});
+
+if(Ti.Platform.name ==="iPhoneOS"){
+	table.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+var phones2013 = Ti.UI.createTableViewSection({
+	headerTitle: "2013 Devices"
+});
+
+var phones2014 = Ti.UI.createTableViewSection({
+	headerTitle: "2104 Devices"
+});
+
+var getDetail = function(){
+	var detailWindow = Ti.UI.createView({
+		backgroundColor: "#f5f5f5"
+	});
+	
+	var detailTitleView = Ti.UI.createView({
+		height: 65,
+		backgroundColor: "#fff",
+		top: 0
+	});
+	
+	var detailBorder = Ti.UI.createView({
+		backgroundColor: "#dbdbdb",
+		height: 1,
+		top: 40
+	});
+	
+	var detailTitleLabel = Ti.UI.createLabel({
+		text: this.title,
+		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+		top: 30,
+		width: "100%", 
+		textAlign: "center"
+	});
+	
+	var detailText = Ti.UI.createLabel({
+		text: this.desc,
+		font: {fontSize: 14, fontFamily: "Arial"},
+		top : 40,
+		left: 10,
+		right: 10
+	});
+
+	detailTitleView.add(detailTitleLabel);
+	detailWindow.add(detailTitleView, detailBorder, detailText);
+	navWin.openWindow(detailWindow);
+};
+
+var loadData = require("data");
+
+mainWin.add(table);
+mainWin.open();
+navWin.open();
+

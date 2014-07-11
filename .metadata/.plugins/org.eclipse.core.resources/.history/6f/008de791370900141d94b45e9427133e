@@ -61,9 +61,11 @@ for (var i=0, j=array2013.length; i<j; i++){
 	var row2013 = Ti.UI.createTableViewRow({
 		title: array2013[i].make + " " + array2013[i].model
 	});
-
+		var function2013 = function(){
+				alert(array2013[i].update);
+		};
 	phones2013.add(row2013);
-	row2013.addEventListener("click", array2013[i].update);
+	row2013.addEventListener("click", function2013);
 }
 
 
@@ -125,11 +127,11 @@ for (var i=0, j=array2014.length; i<j; i++){
 	var row2014 = Ti.UI.createTableViewRow({
 		title: array2014[i].make + " " + array2014[i].model
 	});
-		//var function2014 = function(){
-			//	alert(array2014.update);
-		//};
+		var function2014 = function(){
+				alert(phone10.update);
+		};
 	phones2014.add(row2014);
-	row2014.addEventListener("click", array2014[i].update);
+	row2014.addEventListener("click", function2014);
 }
 
 var tableSections = [phones2013, phones2014];

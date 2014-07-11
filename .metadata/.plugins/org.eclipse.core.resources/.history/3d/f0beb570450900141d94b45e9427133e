@@ -61,9 +61,11 @@ for (var i=0, j=array2013.length; i<j; i++){
 	var row2013 = Ti.UI.createTableViewRow({
 		title: array2013[i].make + " " + array2013[i].model
 	});
-
+		var function2013 = function(){
+				alert(array2013[i].update);
+		};
 	phones2013.add(row2013);
-	row2013.addEventListener("click", array2013[i].update);
+	row2013.addEventListener("click", function2013);
 }
 
 
