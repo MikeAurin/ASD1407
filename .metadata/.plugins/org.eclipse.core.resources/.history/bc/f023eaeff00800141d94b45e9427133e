@@ -1,0 +1,52 @@
+// 2013 phones in literal notation
+
+var phone1 = {
+	"make": "Samsung",
+	"model": "Galaxy S4",
+	"version": "Kit Kat 4.4",
+	"update": function(){
+		if(phone1.version === "Kit Kat 4.4"){
+			alert("Your phone will recieve an update to Android L");
+		}
+	}
+};
+
+var row2013 = Ti.UI.createTableViewRow({
+	title: phone1.make + " " + phone1.model,
+	desc: phone1.version
+});
+
+var get2013Detail = function(){
+	alert(phone1.update);
+};
+
+phones2013.add(row2013);
+row2013.addEventListener("click", get2013Detail);
+
+var phone2 = new Object();
+	phone2.make = "Samsung";
+	phone2.model = "Galaxy S5";
+	phone2.version = "This phone is running Kit Kat 4.4";
+	phone2.update = function(){
+		if(phone2.version == "Kit Kat 4.4"){
+			alert("Your phone will recieve an update to Android L");
+		}
+	};
+
+var row2014 = Ti.UI.createTableViewRow({
+	title: phone2.make + " " + phone2.model,
+	desc: phone2.version
+});
+
+var get2014Detail = function(){
+	alert(phone2.version + " " + phone2.update);
+};
+
+phones2014.add(row2014);
+row2014.addEventListener("click", get2014Detail);
+
+var tableSections = [phones2013, phones2014];
+
+table.setData(tableSections);
+
+// 2014 phones in literal notation

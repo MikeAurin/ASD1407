@@ -1,0 +1,12 @@
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "#blue",
+	title: "Android L Update"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	backgroundColor: "#blue"
+});
+
+navWin.add(mainWin);
+mainWin.open();
+

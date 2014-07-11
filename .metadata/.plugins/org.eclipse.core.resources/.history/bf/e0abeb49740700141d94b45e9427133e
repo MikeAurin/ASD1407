@@ -1,0 +1,12 @@
+var mainWin = Ti.UI.createWindow({
+
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	title: "Android L Update"
+});
+
+mainWin.open();
+navWin.add(mainWin);
+
+navWin.open();
