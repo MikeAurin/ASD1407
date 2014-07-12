@@ -1,5 +1,5 @@
 var mainWin = Ti.UI.createWindow({
-	title: 'Android "L" Update Checker',
+	title: "Android L Update Checker",
 	color: "white"
 });
 
@@ -9,7 +9,7 @@ var navWin = Ti.UI.iOS.createNavigationWindow({
 });
 
 var table = Ti.UI.createTableView({
-	backgroundColor: "#707070"
+	backgroundColor: "orange"
 });
 
 if(Ti.Platform.name ==="iPhoneOS"){

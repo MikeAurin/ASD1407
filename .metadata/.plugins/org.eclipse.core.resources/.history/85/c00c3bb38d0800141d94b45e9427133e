@@ -1,9 +1,0 @@
-// 2013 phones in literal notation
-
-var phone1 = {
-	"make": "Samsung",
-	"model": "Galaxy S3"
-};
-	
-	
-// 2014 phones in literal notation

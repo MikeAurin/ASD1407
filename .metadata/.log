@@ -2919,3 +2919,30 @@ java.net.UnknownHostException: studio.appcelerator.com
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.core.jobs 4 2 2014-07-11 20:34:52.701
+!MESSAGE An internal error occurred during: "Update iOS info".
+!STACK 0
+java.lang.NullPointerException
+	at com.appcelerator.titanium.ios.core.IOSSDKLocator.parseTiInfo(IOSSDKLocator.java:240)
+	at com.appcelerator.titanium.ios.core.IOSSDKLocator.updateTiInfo(IOSSDKLocator.java:148)
+	at com.appcelerator.titanium.ios.core.IOSSDKLocator.access$0(IOSSDKLocator.java:145)
+	at com.appcelerator.titanium.ios.core.IOSSDKLocator$1.run(IOSSDKLocator.java:165)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SESSION 2014-07-12 10:44:10.478 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/MikeAurin/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/MikeAurin/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-07-12 10:44:21.211
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 0 2014-07-12 10:44:24.277
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-12 10:44:24.277
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-07-12 10:44:24.277
+!MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'

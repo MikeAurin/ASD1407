@@ -3,25 +3,23 @@
 var phone1 = {
 	"make": "Samsung",
 	"model": "Galaxy S4",
-	"version": "Kit Kat 4.4",
+	"version": "Jelly Bean 4.3.2",
 	"update": function(){
 		if(phone1.version === "Kit Kat 4.4"){
 			alert("Your phone will recieve an update to Android L");
 				}else{
 			alert("Your phone will not recieve an update to Android L");
+				}
 		}
-	}
-};
+	};
 
 var phone2 = {
 	"make": "LG",
 	"model": "G2",
-	"version": "Jelly Bean 4.3.2",
+	"version": "Kit Kat 4.4",
 	"update": function(){
 		if(phone2.version === "Kit Kat 4.4"){
 			alert("Your phone will recieve an update to Android L");
-				}else{
-			alert("Your phone will not recieve an update to Android L");
 		}
 	}
 };
@@ -29,12 +27,10 @@ var phone2 = {
 var phone3 = {
 	"make": "LG",
 	"model": "Nexus 4",
-	"version": "Jelly Bean 4.3.2",
+	"version": "Kit Kat 4.4",
 	"update": function(){
 		if(phone3.version === "Kit Kat 4.4"){
 			alert("Your phone will recieve an update to Android L");
-				}else{
-			alert("Your phone will not recieve an update to Android L");
 		}
 	}
 };
@@ -46,8 +42,6 @@ var phone4 = {
 	"update": function(){
 		if(phone4.version === "Kit Kat 4.4"){
 			alert("Your phone will recieve an update to Android L");
-				}else{
-			alert("Your phone will not recieve an update to Android L");
 		}
 	}
 };
@@ -55,12 +49,10 @@ var phone4 = {
 var phone5 = {
 	"make": "Motorola",
 	"model": "Droid MAXX",
-	"version": "Jelly Bean 4.3.2",
+	"version": "Kit Kat 4.4",
 	"update": function(){
 		if(phone5.version === "Kit Kat 4.4"){
 			alert("Your phone will recieve an update to Android L");
-				}else{
-			alert("Your phone will not recieve an update to Android L");
 		}
 	}
 };

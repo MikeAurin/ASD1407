@@ -9,7 +9,7 @@ var navWin = Ti.UI.iOS.createNavigationWindow({
 });
 
 var table = Ti.UI.createTableView({
-	backgroundColor: "#707070"
+	backgroundColor: "#B8B8B8"
 });
 
 if(Ti.Platform.name ==="iPhoneOS"){
