@@ -21,7 +21,7 @@ var phones2013 = Ti.UI.createTableViewSection({
 });
 
 var phones2014 = Ti.UI.createTableViewSection({
-	headerTitle: "2104 Devices",
+	headerTitle: "2014 Devices",
 });
 
 var loadData = require("data");
