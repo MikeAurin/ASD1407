@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Remote Data/remoteData.js&apos; to &apos;API.js&apos;" description="Rename resource &apos;remoteData.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="remoteData.js" name="API.js" stamp="1405317117339" updateReferences="true"/>
+</session>
