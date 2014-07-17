@@ -1,0 +1,29 @@
+Ti.UI.setBackgroundColor("white");
+
+var window = Ti.UI.createWindow({
+	backgroundColor: "#cecece",
+	fullscreen: true,
+	layout: "vertical"
+});
+
+header = Ti.UI.createView({
+	height: 50,
+	backgroundColor: "white",
+	top: 0
+});
+
+headerLabel = Ti.UI.createLabel({
+	text: "Reddit's Mildly Interesting",
+	font: {fontFamily: "Roboto", fontSize: 22}
+});
+
+var scrollView = Ti.UI.createScrollView({
+	height: Ti.Platform.displayCaps.platformHeight - header,
+	layout: "vertical"
+});
+
+header.add(headerLabel);
+window.add(header);
+window.add(scrollView);
+
+window.open();

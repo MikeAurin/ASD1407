@@ -1,15 +1,32 @@
-Titanium.UI.setBackgroundColor('#000');
+Ti.UI.setBackgroundColor("white");
 
-// export remote data module
-var remote = require("API");
-
-var table1 = Ti.UI.createTableView({});
-
-var win1 = Ti.UI.createWindow({
-	backgroundColor: "#fff",
-	title: "Reddit API"
+var window = Ti.UI.createWindow({
+	backgroundColor: "#cecece",
+	fullscreen: true,
+	layout: "vertical"
 });
 
-win1.add(table1);
+header = Ti.UI.createView({
+	height: 50,
+	backgroundColor: "#333",
+	top: 0
+});
 
-win1.open();
+headerLabel = Ti.UI.createLabel({
+	text: "Mildly Interesting",
+	font: {fontFamily: "Roboto", fontSize: 22, fontWeight: "bold"},
+	color: "white"
+});
+
+var scrollView = Ti.UI.createScrollView({
+	height: Ti.Platform.displayCaps.platformHeight - header,
+	layout: "vertical"
+});
+
+header.add(headerLabel);
+window.add(header);
+window.add(scrollView);
+
+var remoteData = require("remoteData");
+
+window.open();
