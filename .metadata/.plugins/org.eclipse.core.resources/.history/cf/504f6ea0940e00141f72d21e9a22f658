@@ -1,0 +1,44 @@
+Ti.UI.setBackgroundColor("#fff");
+
+mainWin = Ti.UI.createWindow({
+	backgroundColor: "black"
+});
+
+var title, image, button;
+
+title = Ti.UI.createLabel({
+	text: "Mildly Interesting",
+	font: {fontFamily: "Roboto", fontSize: 20},
+	top: 20,
+	textAlign: "center",
+	color: "white"
+});
+
+image = Ti.UI.createImageView({
+	
+	image: "reddit_alien.png",
+	size: "auto",
+	top: 40
+});
+
+button = Ti.UI.createButton({
+	bottom: 0,
+	height: 50,
+	title: "Enter",
+	width: 100,
+	backgroundColor: "#fff",
+	color: "white"
+});
+
+mainWin.add(title, image, button);
+
+var openTable = function(){
+	require("table");
+	table.open();
+};
+
+button.addEventListener("click", openTable);
+
+mainWin.open();
+
+

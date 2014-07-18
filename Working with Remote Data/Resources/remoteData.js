@@ -3,14 +3,30 @@ var url = "http://api.reddit.com/r/mildlyinteresting";
 var showPic = function(evt){
 	console.log(evt.source.picture);
 	var newWindow = Ti.UI.createWindow({
-		backgroundColor: "#fff"
+		backgroundColor: "#f3f3f3"
+	});
+	
+	var title = Ti.UI.createLabel({
+		text: "Author: " + " " + evt.source.author,
+		top: 20,
+		textAlign: "Center",
+		font: {fontFamily: "Roboto", fontSize: 24}		
+	});
+	
+	var upvotes = Ti.UI.createLabel({
+		text: "Upvotes: " + " " + evt.source.votes,
+		bottom: 20,
+		font: {fontFamily: "Roboto", fontSize: 28},
+		textAlign: "center"
 	});
 	
 	var img = Ti.UI.createImageView({
-		image: evt.source.picture
+		image: evt.source.picture,
+		top: 50,
+		bottom: 40
 	});
 	
-	newWindow.add(img);
+	newWindow.add(img, title, upvotes);
 	newWindow.open();
 	newWindow.addEventListener("click", function(){
 		this.close();
@@ -18,14 +34,14 @@ var showPic = function(evt){
 };
 
 var success = function(){
-	alert("Mildly Interesting was succesfully loaded.  Prepare to me mildly interested!");
+	alert("Mildly Interesting was succesfully loaded.  Prepare to be mildly interested!");
 	console.log("this.responseText");
 	var replyData = JSON.parse(this.responseText);
 	var posts = replyData.data.children;
 	
 	for (var i=0; i<posts.length; i++){
 		var pic = posts[i].data.url;
-		var title = posts[i].data.author;
+		var author = posts[i].data.author;
 		var upvotes = posts[i].data.ups;
 		var ending = pic.substring((pic.length - 3), pic.length);
 		console.log(ending);
@@ -38,7 +54,6 @@ var success = function(){
 				bottom: 3,
 				picture: pic,
 				title: title,
-				upvotes: upvotes,
 				height: Ti.UI.SIZE
 			});
 			var label = Ti.UI.createLabel({
@@ -51,7 +66,9 @@ var success = function(){
 				right: 10,
 				textAlign: "center",
 				picture: pic,
-				height: "auto"
+				author: author,
+				height: "auto",
+				votes: upvotes
 			});
 			view.add(label);
 			scrollView.add(view);
