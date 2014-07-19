@@ -1,5 +1,5 @@
 =run
-LAST_LAUNCH_TIMESTAMP=1405797815236
+LAST_LAUNCH_TIMESTAMP=1405810731004
 Objects\:launchMode=run
 Objects\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 Reddit\ API\:launchMode=run
@@ -7,7 +7,7 @@ Reddit\ API\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ip
 Remote\ Data\:launchMode=run
 Remote\ Data\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 Working\ with\ Remote\ Data\:launchMode=run
-Working\ with\ Remote\ Data\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
+Working\ with\ Remote\ Data\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.iPad
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103

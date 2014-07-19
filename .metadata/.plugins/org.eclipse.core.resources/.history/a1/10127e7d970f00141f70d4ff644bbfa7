@@ -49,7 +49,7 @@ var success = function(){
 	
 	for (var i=0; i<posts.length; i++){
 		var pic = posts[i].data.url;
-		var or = posts[i].data.author;
+		var author = posts[i].data.author;
 		var upvotes = posts[i].data.ups;
 		var ending = pic.substring((pic.length - 3), pic.length);
 		console.log(ending);
@@ -58,7 +58,7 @@ var success = function(){
 			var title = posts[i].data.title;
 			
 			var view = Ti.UI.createView({
-				backgroundColor: "#66E0FF",
+				//backgroundColor: "#66E0FF",
 				bottom: 3,
 				picture: pic,
 				title: title,

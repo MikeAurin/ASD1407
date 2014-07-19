@@ -20,8 +20,7 @@ headerLabel = Ti.UI.createLabel({
 
 var scrollView = Ti.UI.createScrollView({
 	height: Ti.Platform.displayCaps.platformHeight - header,
-	layout: "vertical",
-	backgroundImage: "reddit_alien.png"
+	layout: "vertical"
 });
 
 header.add(headerLabel);
