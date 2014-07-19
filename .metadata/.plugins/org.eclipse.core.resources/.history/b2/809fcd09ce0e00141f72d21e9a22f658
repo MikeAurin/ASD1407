@@ -4,6 +4,7 @@ var window = Ti.UI.createWindow({
 	backgroundColor: "#cecece",
 	fullscreen: true,
 	layout: "vertical",
+	top: 10
 });
 
 header = Ti.UI.createView({

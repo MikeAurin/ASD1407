@@ -3,17 +3,20 @@ var url = "http://api.reddit.com/r/mildlyinteresting";
 var showPic = function(evt){
 	console.log(evt.source.picture);
 	var newWindow = Ti.UI.createWindow({
-		backgroundColor: "#333",
-		fullScreen: true
+		backgroundColor: "#f3f3f3"
 	});
 	
 	var title = Ti.UI.createLabel({
 		text: "Author: " + " " + evt.source.author,
-		top: 25,
-		textAlign: "center",
+		top: 20,
+		Textalign: "center",
 		font: {fontFamily: "Roboto", fontSize: 24},
+		width: "100%"
+	});
+	
+	var titleHeader = Ti.UI.createView({
 		width: "100%",
-		color: "white"
+		backgroundColor: "#fefefe"
 	});
 	
 	var upvotes = Ti.UI.createLabel({
@@ -21,20 +24,21 @@ var showPic = function(evt){
 		bottom: 20,
 		font: {fontFamily: "Roboto", fontSize: 28},
 		textAlign: "center",
-		color: "black",
+		color: "white",
 		zIndex: 2,
 		borderRadius: 3,
-		backgroundColor: "white"
+		backgroundColor: "#333"
 	});
 	
 	var img = Ti.UI.createImageView({
 		image: evt.source.picture,
-		width: "100%",
-		top: 60,
+		top: 50,
 		zIndex: 0
 	});
 	
-	newWindow.add(img, title, upvotes);
+	titleHeader.add(title);
+	
+	newWindow.add(img, titleHeader, upvotes);
 	newWindow.open();
 	newWindow.addEventListener("click", function(){
 		this.close();
@@ -58,7 +62,7 @@ var success = function(){
 			var title = posts[i].data.title;
 			
 			var view = Ti.UI.createView({
-				backgroundColor: "#66E0FF",
+				backgroundColor: "#fff",
 				bottom: 3,
 				picture: pic,
 				title: title,

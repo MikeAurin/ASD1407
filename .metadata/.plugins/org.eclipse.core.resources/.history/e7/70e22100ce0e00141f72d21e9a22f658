@@ -3,7 +3,7 @@ Ti.UI.setBackgroundColor("white");
 var window = Ti.UI.createWindow({
 	backgroundColor: "#cecece",
 	fullscreen: true,
-	layout: "vertical",
+	layout: "vertical"
 });
 
 header = Ti.UI.createView({

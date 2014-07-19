@@ -9,7 +9,7 @@ var showPic = function(evt){
 	
 	var title = Ti.UI.createLabel({
 		text: "Author: " + " " + evt.source.author,
-		top: 25,
+		top: 30,
 		textAlign: "center",
 		font: {fontFamily: "Roboto", fontSize: 24},
 		width: "100%",
@@ -58,7 +58,7 @@ var success = function(){
 			var title = posts[i].data.title;
 			
 			var view = Ti.UI.createView({
-				backgroundColor: "#66E0FF",
+				backgroundColor: "#fff",
 				bottom: 3,
 				picture: pic,
 				title: title,
