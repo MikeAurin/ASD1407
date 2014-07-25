@@ -1,7 +1,0 @@
-Ti.UI.setBackgroundColor("#fff");
-
-var title, image, button;
-
-title = Ti.UI.createLabel({
-	text: ""
-})
