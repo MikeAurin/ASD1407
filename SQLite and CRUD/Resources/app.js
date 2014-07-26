@@ -24,9 +24,6 @@ ui.button.addEventListener("click", function(e){
 		ui.nameField.value = "";
 		ui.relationField.value = "";
 		ui.numberField.value = "";
-		ui.nameField.blur();
-		ui.relationField.blur();
-		ui.nameField.blur();
 		data.create(newName, newRelation, newNumber);
 		data.read();
 	} else {
@@ -79,12 +76,8 @@ ui.tableData.addEventListener("click", function(e){
 });
 
 win1.add(ui.tableData);
-
-win2.add(ui.nameLabel);
 win2.add(ui.nameField);
-win2.add(ui.relationLabel);
 win2.add(ui.relationField);
-win2.add(ui.numberLabel);
 win2.add(ui.numberField);
 
 win2.add(ui.button);
