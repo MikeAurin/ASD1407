@@ -91,7 +91,6 @@ exports.nameField = Ti.UI.createTextField({
 	borderSize: 1,
 	borderColor: "gray",
 	font: {fontSize: 18, fontFamily: "Helvetica"},
-	hintText: "Contact Name",
 	paddingLeft: 5,
 	paddingRight: 5
 });
@@ -111,7 +110,6 @@ exports.numberField = Ti.UI.createTextField({
 	borderSize: 1,
 	borderColor: "gray",
 	font: {fontSize: 18, fontFamily: "Helvetica"},
-	hintText: "Contact Number",
 	paddingLeft: 5, 
 	paddingRight: 5
 });
@@ -129,8 +127,8 @@ exports.relationField = Ti.UI.createTextField({
 	right: 15, 
 	top: 3, 
 	height: 50,
-	font: {fontSize: 18, fontFamily:"Helvetica"},
-	hintText: "Relation to You",
+	font: {fontSize: 18, 
+	fontFamily: "Helvetica"},
 	borderSize: 1,
 	borderColor: "gray",
 	paddingLeft: 5, 
