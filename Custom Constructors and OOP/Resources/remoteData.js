@@ -40,7 +40,34 @@ var showPic = function(evt){
 	
 	newWindow.open();
 	newWindow.addEventListener('click', function(e){
-		this.close();
+			var dialog = Ti.UI.createAlertDialog({
+			    cancel: 1,
+			    buttonNames: ['Open', 'Delete', 'Cancel'],
+			    message: 'Do you wish to open or delete?',
+			    row: this
+			  });
+			  dialog.show();
+			  
+			dialog.addEventListener("click", function(evt){
+			   if(this.buttonNames[e.index] === "Open"){ 
+			  	
+		        showImg();
+			  }else{ 
+			  	var confirmDelete = Ti.UI.createAlertDialog({
+				cancel: 1,
+				buttonNames: ["Ok", "Cancel"],
+				message: "Delete this entry?",
+				title:"Delete this entry?"
+			});
+			  confirmDelete.addEventListener("click",function(evt2){
+				if (evt2.index === 0){
+					OOP.del(button.id);
+				}
+			});
+			confirmDelete.show();
+		}
+	dialog.show();
+
 	});
 };
 
@@ -51,7 +78,7 @@ var success = function(){
 	var posts = replyData.data.children;
 	
 	for (var i=0; i<posts.length; i++){
-		var pic = posts[i].data.url;
+		var pic = posts[i].d ata.url;
 		var author = posts[i].data.author;
 		var upvotes = posts[i].data.ups;
 		var ending = pic.substring((pic.length - 3), pic.length);
