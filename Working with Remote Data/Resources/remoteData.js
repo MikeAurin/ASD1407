@@ -39,7 +39,7 @@ var showPic = function(evt){
 	newWindow.add(upvotes);
 	
 	newWindow.open();
-	newWindow.addEventListener("click", function(){
+	newWindow.addEventListener('click', function(){
 		this.close();
 	});
 };

@@ -1,0 +1,38 @@
+Ti.Database.install("database/redditDB.sqlite", "redditTable");
+
+for( var i=0, j)
+
+var read = function(){
+	var db = Ti.Database.open("redditTable");
+	var dbRows = db.execute("SELECT id, url, author, ups FROM redditTable");
+	while (dbRows.isValidRow()) {
+		tblData.push({
+			id: dbRows.fieldByName('id'),
+			url: dbRows.fieldByName('pic'),
+			author: dbRows.fieldByName('author'),
+			ups: dbRows.fieldByName('upvotes'),
+		});
+		dbRows.next();
+	}
+	dbRows.close();
+	db.close();
+};
+exports.read = read;
+
+var create = function(url, author, id) {
+	var db = Ti.Database.open("redditTable");
+	db.execute("INSERT INTO contactsTable (url, author, ups VALUES (?, ?, ?)", url, author, ups);
+	var rowID = db.lastInsertRowId;
+	db.close();
+	tblData = [];
+};
+exports.create = create;
+
+var del = function(id) {
+	var db = Ti.Database.open("redditTable");
+	db.execute("DELETE FROM contactsTable WHERE id=?", id);
+	db.close();
+	tblData = [];
+	read();
+};
+exports.del = del;

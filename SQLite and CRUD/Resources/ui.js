@@ -19,7 +19,10 @@ var tableData = Ti.UI.createTableView({
 
 var button = Ti.UI.createButton({
 	bottom: 0,
-	title: "Create"
+	title: "Create",
+	border: 2,
+	width: "75%",
+	backgroundColor: "#333"
 });
 
 var peopleTbl = function(peopleData) {
@@ -86,12 +89,13 @@ exports.nameLabel = Ti.UI.createLabel({
 exports.nameField = Ti.UI.createTextField({
 	left: 15, 
 	right: 15, 
-	top: 3,
-	height: 30,
+	top: 10,
+	height: 40,
 	borderSize: 1,
 	borderColor: "gray",
-	font: {fontSize: 18, fontFamily: "Helvetica"},
+	font: {fontSize: 18, fontFamily: "Roboto"},
 	hintText: "Contact Name",
+	color: "black",
 	paddingLeft: 5,
 	paddingRight: 5
 });
@@ -107,11 +111,12 @@ exports.numberField = Ti.UI.createTextField({
 	left: 15, 
 	right: 15, 
 	top: 3,
-	height: 45,
+	height: 40,
 	borderSize: 1,
 	borderColor: "gray",
-	font: {fontSize: 18, fontFamily: "Helvetica"},
+	font: {fontSize: 18, fontFamily: "Roboto"},
 	hintText: "Contact Number",
+	color: "black",
 	paddingLeft: 5, 
 	paddingRight: 5
 });
@@ -128,9 +133,10 @@ exports.relationField = Ti.UI.createTextField({
 	left: 15, 
 	right: 15, 
 	top: 3, 
-	height: 50,
-	font: {fontSize: 18, fontFamily:"Helvetica"},
+	height: 40,
+	font: {fontSize: 18, fontFamily: "Roboto"},
 	hintText: "Relation to You",
+	color: "black",
 	borderSize: 1,
 	borderColor: "gray",
 	paddingLeft: 5, 

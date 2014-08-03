@@ -1,0 +1,16 @@
+Ti.Database.install("database/redditDB.sqlite", "redditDB");
+
+for (var i = 0, j=children.length; i<j; i++){
+	var array = children.data[i];
+	var newPost = new info.Object(array);
+}
+
+var db = Ti.Database.open("redditDB");
+var getData = db.execute("SELECT * FROM items");
+while(getData.isValidRow()){
+	var dbData = JSON.parse(getData.fieldByName('info'));
+	getData.next();
+};
+
+getData.close();
+db.close();

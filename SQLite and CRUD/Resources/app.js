@@ -17,7 +17,7 @@ data.read();
 
 ui.button.addEventListener("click", function(e){
 	if (ui.button.edit != true) {
-		alert("Create!");
+		alert("Contact Added");
 		var newName = ui.nameField.value;
 		var newRelation = ui.relationField.value;
 		var newNumber = ui.numberField.value;

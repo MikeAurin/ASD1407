@@ -2,6 +2,7 @@
 <launchConfiguration type="com.appcelerator.titanium.mobile.ui.android.installer.launchConfigurationType">
 <stringAttribute key="ATTR_PROJECT_NAME" value="SQLite and CRUD"/>
 <stringAttribute key="abi" value="armeabi"/>
+<stringAttribute key="device-id" value="0c4ef2b2"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/SQLite and CRUD"/>
 </listAttribute>

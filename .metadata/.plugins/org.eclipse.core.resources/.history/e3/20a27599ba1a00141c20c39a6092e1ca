@@ -1,0 +1,138 @@
+var url = "http://api.reddit.com/r/mildlyinteresting";
+
+var showPic = function(evt){
+	console.log(evt.source.picture);
+	var newWindow = Ti.UI.createWindow({
+		backgroundColor: "#333",
+		fullScreen: true
+	});
+	
+	var title = Ti.UI.createLabel({
+		text: "Author: " + " " + evt.source.author,
+		top: 25,
+		textAlign: "center",
+		font: {fontFamily: "Roboto", fontSize: 24},
+		width: "100%",
+		color: "white"
+	});
+	
+	var upvotes = Ti.UI.createLabel({
+		text: "Upvotes: " + " " + evt.source.votes,
+		bottom: 20,
+		font: {fontFamily: "Roboto", fontSize: 28},
+		textAlign: "center",
+		color: "black",
+		zIndex: 2,
+		borderRadius: 3,
+		backgroundColor: "white"
+	});
+	
+	var img = Ti.UI.createImageView({
+		image: evt.source.picture,
+		width: "100%",
+		top: 60,
+		zIndex: 0
+	});
+	
+	newWindow.add(img);
+	newWindow.add(title);
+	newWindow.add(upvotes);
+	
+	newWindow.open();
+	newWindow.addEventListener("click", function(){
+		this.close();
+	});
+};
+
+Ti.Database.install("database/redditDB.sqlite", "redditTable");
+
+var read = function(){
+	var db = Ti.Database.open("redditTable");
+	var dbRows = db.execute("SELECT id, url, author, ups FROM redditTable");
+	json.parse(dbRows);
+	while (dbRows.isValidRow()) {
+		tblData.push({
+			id: dbRows.fieldByName('id'),
+			url: dbRows.fieldByName('pic'),
+			author: dbRows.fieldByName('author'),
+			ups: dbRows.fieldByName('upvotes'),
+		});
+		dbRows.next();
+	}
+	dbRows.close();
+	db.close();
+};
+exports.read = read;
+
+var create = function(url, author, id) {
+	var db = Ti.Database.open("redditTable");
+	db.execute("INSERT INTO contactsTable (url, author, ups VALUES (?, ?, ?)", url, author, ups);
+	var rowID = db.lastInsertRowId;
+	for (var i=0; i<dbRows.length; i++){
+		var pic = dbRows[i].data.url;
+		var author = dbRows[i].data.author;
+		var upvotes = dbRows[i].data.ups;
+		var ending = pic.substring((pic.length - 3), pic.length);
+		console.log(ending);
+		
+		if(ending === "jpg" || ending === "gif" || ending === "png"){
+			var title = dbRows[i].data.title;
+			
+			var view = Ti.UI.createView({
+				backgroundColor: "black",
+				bottom: 3,
+				picture: pic,
+				title: title,
+				height: Ti.UI.SIZE
+			});
+			var label = Ti.UI.createLabel({
+				text: title,
+				color: "black",
+				font: {fontFamily: "Roboto", fontSize: "14"},
+				top: 3,
+				bottom: 3,
+				left: 10,
+				right: 10,
+				textAlign: "center",
+				picture: pic,
+				author: author,
+				height: "auto",
+				votes: upvotes
+			});
+			view.add(label);
+			scrollView.add(view);
+			label.addEventListener("click", showPic);
+		}	
+		dbRows.next();
+	};
+	db.close();
+	tblData = [];
+};
+exports.create = create;
+
+var del = function(id) {
+	var db = Ti.Database.open("redditTable");
+	db.execute("DELETE FROM contactsTable WHERE id=?", id);
+	db.close();
+	tblData = [];
+	read();
+};
+exports.del = del;
+
+
+var client = Ti.Network.createHTTPClient({
+	onload: success,
+	onerror: error,
+	timeout: 5000
+});
+
+exports.success = success;
+
+var error = function(evt){
+	alert("r/mildlyinteresting can not load.  Please ensure you have a mobile data connection or Wi-Fi accessibility.");
+	console.log(evt.error);
+};
+
+client.open("GET", url);
+
+client.send();
