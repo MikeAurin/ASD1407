@@ -1,4 +1,4 @@
-var remoteData = require("remoteData");
+var remoteData = require("remoteData"); //This file should only be called once. You have already called it in app.js. If it should run here, then remove it from app.js
 
 Ti.Database.install("database/redditDB.sqlite", "redditDB");
 
