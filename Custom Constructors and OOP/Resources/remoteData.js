@@ -69,7 +69,7 @@ var showPic = function(evt){
 	dialog.show();
 
 	});
-};
+}; //IC Unexpected token punc «;», expected punc «,» [line 72, column 1]. This occurs because someline above has the wrong snytax.
 
 var success = function(){
 	alert("Mildly Interesting was succesfully loaded.  Prepare to be mildly interested!");

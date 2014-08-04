@@ -27,7 +27,7 @@ header.add(headerLabel);
 window.add(header);
 window.add(scrollView);
 
-var database = require("database");
+var database = require("database"); //this file is not within your resources directory and will not load.
 var remoteData = require('remoteData');  
 
 
